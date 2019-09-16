@@ -122,32 +122,32 @@ DataAndStruct/fast:
 	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/build
 .PHONY : DataAndStruct/fast
 
-main.obj: main.cpp.obj
+Linear_List/main.obj: Linear_List/main.cpp.obj
 
-.PHONY : main.obj
+.PHONY : Linear_List/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+Linear_List/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj
+.PHONY : Linear_List/main.cpp.obj
 
-main.i: main.cpp.i
+Linear_List/main.i: Linear_List/main.cpp.i
 
-.PHONY : main.i
+.PHONY : Linear_List/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.i
-.PHONY : main.cpp.i
+Linear_List/main.cpp.i:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.i
+.PHONY : Linear_List/main.cpp.i
 
-main.s: main.cpp.s
+Linear_List/main.s: Linear_List/main.cpp.s
 
-.PHONY : main.s
+.PHONY : Linear_List/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.s
-.PHONY : main.cpp.s
+Linear_List/main.cpp.s:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.s
+.PHONY : Linear_List/main.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... DataAndStruct
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Linear_List/main.obj
+	@echo ... Linear_List/main.i
+	@echo ... Linear_List/main.s
 .PHONY : help
 
 

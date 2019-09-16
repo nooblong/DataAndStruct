@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/DataAndStruct.dir/main.cpp.obj"
+  "CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj"
   "DataAndStruct.pdb"
   "DataAndStruct.exe"
   "DataAndStruct.exe.manifest"

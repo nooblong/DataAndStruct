@@ -80,7 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/main.cpp">
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/Exception.h">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/List.h">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/SeqLIst.h">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/main.cpp">
 			<Option target="DataAndStruct"/>
 		</Unit>
 		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/CMakeLists.txt">

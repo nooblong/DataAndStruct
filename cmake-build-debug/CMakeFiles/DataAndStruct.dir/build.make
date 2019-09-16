@@ -56,27 +56,27 @@ include CMakeFiles/DataAndStruct.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/DataAndStruct.dir/flags.make
 
-CMakeFiles/DataAndStruct.dir/main.cpp.obj: CMakeFiles/DataAndStruct.dir/flags.make
-CMakeFiles/DataAndStruct.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lyl\Desktop\DataAndStruct\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataAndStruct.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\DataAndStruct.dir\main.cpp.obj -c C:\Users\lyl\Desktop\DataAndStruct\main.cpp
+CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj: CMakeFiles/DataAndStruct.dir/flags.make
+CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj: ../Linear_List/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lyl\Desktop\DataAndStruct\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\DataAndStruct.dir\Linear_List\main.cpp.obj -c C:\Users\lyl\Desktop\DataAndStruct\Linear_List\main.cpp
 
-CMakeFiles/DataAndStruct.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataAndStruct.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lyl\Desktop\DataAndStruct\main.cpp > CMakeFiles\DataAndStruct.dir\main.cpp.i
+CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lyl\Desktop\DataAndStruct\Linear_List\main.cpp > CMakeFiles\DataAndStruct.dir\Linear_List\main.cpp.i
 
-CMakeFiles/DataAndStruct.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataAndStruct.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lyl\Desktop\DataAndStruct\main.cpp -o CMakeFiles\DataAndStruct.dir\main.cpp.s
+CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lyl\Desktop\DataAndStruct\Linear_List\main.cpp -o CMakeFiles\DataAndStruct.dir\Linear_List\main.cpp.s
 
 # Object files for target DataAndStruct
 DataAndStruct_OBJECTS = \
-"CMakeFiles/DataAndStruct.dir/main.cpp.obj"
+"CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj"
 
 # External object files for target DataAndStruct
 DataAndStruct_EXTERNAL_OBJECTS =
 
-DataAndStruct.exe: CMakeFiles/DataAndStruct.dir/main.cpp.obj
+DataAndStruct.exe: CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj
 DataAndStruct.exe: CMakeFiles/DataAndStruct.dir/build.make
 DataAndStruct.exe: CMakeFiles/DataAndStruct.dir/linklibs.rsp
 DataAndStruct.exe: CMakeFiles/DataAndStruct.dir/objects1.rsp

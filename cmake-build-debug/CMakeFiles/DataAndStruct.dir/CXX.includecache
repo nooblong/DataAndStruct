@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/lyl/Desktop/DataAndStruct/main.cpp
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/Exception.h
+math.h
+-
+
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/List.h
+
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/SeqLIst.h
+iostream
+-
+List.h
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/List.h
+Exception.h
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/Exception.h
+
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/main.cpp
+SeqLIst.h
+C:/Users/lyl/Desktop/DataAndStruct/Linear_List/SeqLIst.h
 iostream
 -
 
