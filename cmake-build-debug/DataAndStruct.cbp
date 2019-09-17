@@ -89,7 +89,19 @@
 		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/SeqLIst.h">
 			<Option target="DataAndStruct"/>
 		</Unit>
-		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/main.cpp">
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Linear_List/main1.cpp">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Link_List/linkList.cpp">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Link_List/linkList.h">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/Link_List/main2.cpp">
+			<Option target="DataAndStruct"/>
+		</Unit>
+		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/main.cpp">
 			<Option target="DataAndStruct"/>
 		</Unit>
 		<Unit filename="C:/Users/lyl/Desktop/DataAndStruct/CMakeLists.txt">

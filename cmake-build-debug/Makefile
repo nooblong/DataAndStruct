@@ -122,32 +122,113 @@ DataAndStruct/fast:
 	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/build
 .PHONY : DataAndStruct/fast
 
-Linear_List/main.obj: Linear_List/main.cpp.obj
+Linear_List/main1.obj: Linear_List/main1.cpp.obj
 
-.PHONY : Linear_List/main.obj
+.PHONY : Linear_List/main1.obj
 
 # target to build an object file
-Linear_List/main.cpp.obj:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.obj
-.PHONY : Linear_List/main.cpp.obj
+Linear_List/main1.cpp.obj:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main1.cpp.obj
+.PHONY : Linear_List/main1.cpp.obj
 
-Linear_List/main.i: Linear_List/main.cpp.i
+Linear_List/main1.i: Linear_List/main1.cpp.i
 
-.PHONY : Linear_List/main.i
+.PHONY : Linear_List/main1.i
 
 # target to preprocess a source file
-Linear_List/main.cpp.i:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.i
-.PHONY : Linear_List/main.cpp.i
+Linear_List/main1.cpp.i:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main1.cpp.i
+.PHONY : Linear_List/main1.cpp.i
 
-Linear_List/main.s: Linear_List/main.cpp.s
+Linear_List/main1.s: Linear_List/main1.cpp.s
 
-.PHONY : Linear_List/main.s
+.PHONY : Linear_List/main1.s
 
 # target to generate assembly for a file
-Linear_List/main.cpp.s:
-	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main.cpp.s
-.PHONY : Linear_List/main.cpp.s
+Linear_List/main1.cpp.s:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Linear_List/main1.cpp.s
+.PHONY : Linear_List/main1.cpp.s
+
+Link_List/linkList.obj: Link_List/linkList.cpp.obj
+
+.PHONY : Link_List/linkList.obj
+
+# target to build an object file
+Link_List/linkList.cpp.obj:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/linkList.cpp.obj
+.PHONY : Link_List/linkList.cpp.obj
+
+Link_List/linkList.i: Link_List/linkList.cpp.i
+
+.PHONY : Link_List/linkList.i
+
+# target to preprocess a source file
+Link_List/linkList.cpp.i:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/linkList.cpp.i
+.PHONY : Link_List/linkList.cpp.i
+
+Link_List/linkList.s: Link_List/linkList.cpp.s
+
+.PHONY : Link_List/linkList.s
+
+# target to generate assembly for a file
+Link_List/linkList.cpp.s:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/linkList.cpp.s
+.PHONY : Link_List/linkList.cpp.s
+
+Link_List/main2.obj: Link_List/main2.cpp.obj
+
+.PHONY : Link_List/main2.obj
+
+# target to build an object file
+Link_List/main2.cpp.obj:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/main2.cpp.obj
+.PHONY : Link_List/main2.cpp.obj
+
+Link_List/main2.i: Link_List/main2.cpp.i
+
+.PHONY : Link_List/main2.i
+
+# target to preprocess a source file
+Link_List/main2.cpp.i:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/main2.cpp.i
+.PHONY : Link_List/main2.cpp.i
+
+Link_List/main2.s: Link_List/main2.cpp.s
+
+.PHONY : Link_List/main2.s
+
+# target to generate assembly for a file
+Link_List/main2.cpp.s:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/Link_List/main2.cpp.s
+.PHONY : Link_List/main2.cpp.s
+
+main.obj: main.cpp.obj
+
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\DataAndStruct.dir\build.make CMakeFiles/DataAndStruct.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -158,9 +239,18 @@ help:
 	@echo ... DataAndStruct
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Linear_List/main.obj
-	@echo ... Linear_List/main.i
-	@echo ... Linear_List/main.s
+	@echo ... Linear_List/main1.obj
+	@echo ... Linear_List/main1.i
+	@echo ... Linear_List/main1.s
+	@echo ... Link_List/linkList.obj
+	@echo ... Link_List/linkList.i
+	@echo ... Link_List/linkList.s
+	@echo ... Link_List/main2.obj
+	@echo ... Link_List/main2.i
+	@echo ... Link_List/main2.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 
