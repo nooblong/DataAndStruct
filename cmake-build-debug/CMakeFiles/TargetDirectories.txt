@@ -1,3 +1,0 @@
-C:/Users/lyl/Desktop/DataAndStruct/cmake-build-debug/CMakeFiles/DataAndStruct.dir
-C:/Users/lyl/Desktop/DataAndStruct/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/lyl/Desktop/DataAndStruct/cmake-build-debug/CMakeFiles/rebuild_cache.dir
