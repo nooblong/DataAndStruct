@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "List.h"
-#include "Exception.h"
+#include "../Exception.h"
 
 template <class elemType>
 class SeqLIst : public List<elemType> {
