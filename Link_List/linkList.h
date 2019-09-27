@@ -5,7 +5,7 @@
 #ifndef DATAANDSTRUCT_LINKLIST_H
 #define DATAANDSTRUCT_LINKLIST_H
 
-#include "../Linear_List/List.h"
+#include "../List.h"
 #include "../Exception.h"
 #include <iostream>
 using namespace std;

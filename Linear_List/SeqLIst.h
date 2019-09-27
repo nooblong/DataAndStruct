@@ -6,7 +6,7 @@
 #define DATAANDSTRUCT_SEQLIST_H
 
 #include <iostream>
-#include "List.h"
+#include "../List.h"
 #include "../Exception.h"
 
 template <class elemType>
