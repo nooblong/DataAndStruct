@@ -10,4 +10,5 @@ int main2() {
     linkList.traverse();
     linkList.inverse();
     linkList.traverse();
+    return 0;
 }
