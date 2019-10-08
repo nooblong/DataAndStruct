@@ -4,7 +4,7 @@
 #include "linkList.h"
 
 using namespace std;
-int main() {
+int main2() {
     linkList<int> linkList;
     linkList.getSimpleLinkList();
     linkList.traverse();
