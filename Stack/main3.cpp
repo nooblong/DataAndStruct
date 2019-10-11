@@ -4,18 +4,21 @@
 #include "SeqStack.h"
 #include "dSeqStack.h"
 #include <iostream>
-
 using namespace std;
 
-int main() {
-//    seqStack<int> ss(100);
-//    for (int i = 0; i < 10; ++i) {
-//        ss.push(i);
-//    }
-//    int size = ss.size();
-//    for (int j = 0; j < size; ++j) {
-//        cout << ss.pop() << " ";
-//    }
+void convert(){
+
+}
+
+void testStack() {
+    seqStack<int> ss(100);
+    for (int i = 0; i < 10; ++i) {
+        ss.push(i);
+    }
+    int size = ss.size();
+    for (int j = 0; j < size; ++j) {
+        cout << ss.pop() << " ";
+    }
     cout << endl;
 
     dSeqStack<int> dss(5);
@@ -38,4 +41,8 @@ int main() {
     for (int k = 0; k < num1; ++k) {
         cout<<dss.pop(1)<<" ";
     }
+}
+
+int main(){
+    convert();
 }
