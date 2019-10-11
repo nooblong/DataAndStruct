@@ -11,4 +11,4 @@ add_executable(DataAndStruct
         Link_List/linkList.h
         Stack/main3.cpp
         Stack/SeqStack.h
-        Stack/Stack.h Stack/dSeqStack.h)
+        Stack/Stack.h Stack/dSeqStack.h Stack/linkStack.h)
