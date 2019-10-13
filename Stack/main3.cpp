@@ -3,11 +3,79 @@
 //
 #include "SeqStack.h"
 #include "dSeqStack.h"
+#include "linkStack.h"
+#include "calculator.h"
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
-void convert(){
+void convert(int N) {
+    linkStack<int> S;
+    int e;
+    while (0 != N) {
+        S.push(N % 16);
+        N = N / 16;
+    }
+    while (!S.empty()) {
+        e = S.pop();
+        if (e > 9)
+            cout << char(e - 10 + 'A');
+        else
+            cout << e;
+    }
+}
 
+bool match() {
+    linkStack<char> T;
+    char item;
+    int i = 0;
+    string expression;
+    getline(cin, expression);
+    while (i < expression.size()) {
+        switch (expression[i]) {
+            case '(':
+                T.push(expression[i]);
+                break;
+            case ')':
+                if (T.empty() || (item = T.getTop()) != '(') {
+                    cout << "mismatched\n";
+                    return false;
+                } else {
+                    T.pop();
+                    break;
+                }
+            case '[':
+                T.push(expression[i]);
+            case ']':
+                if (T.empty() || (item = T.getTop()) != '[') {
+                    cout << "mismatched\n";
+                    return false;
+                } else {
+                    T.pop();
+                    break;
+                }
+            case '{':
+                T.push(expression[i]);
+                break;
+            case '}':
+                if (T.empty() || (item = T.getTop()) != '{') {
+                    cout << "mismatched\n";
+                    return false;
+                } else {
+                    T.pop();
+                    break;
+                }
+        }
+        i++;
+    }
+    if (T.empty()) {
+        cout << "matched\n";
+        return true;
+    } else {
+        cout<<"mismatched\n";
+        return false;
+    }
 }
 
 void testStack() {
@@ -35,14 +103,36 @@ void testStack() {
     int num0 = dss.size(0);
     int num1 = dss.size(1);
     for (int j = 0; j < num0; j++) {
-        cout<<dss.pop(0)<<" ";
+        cout << dss.pop(0) << " ";
     }
     cout << endl;
     for (int k = 0; k < num1; ++k) {
-        cout<<dss.pop(1)<<" ";
+        cout << dss.pop(1) << " ";
     }
 }
 
-int main(){
-    convert();
+void testLinkStack() {
+    linkStack<int> l;
+    for (int i = 0; i < 10; ++i) {
+        l.push(i);
+    }
+    for (int j = 0; j < 10; ++j) {
+        cout << l.pop();
+    }
+}
+
+int main() {
+//    convert(1000);
+//    match();
+//    const char* a;
+//    string str = "hello";
+//    a = str.c_str();
+//    char* b;
+//    strcpy(b,a);
+//    cout<<b;
+//    calculator *c = new calculator((char*)"(2+2*2)*2=");
+    calculator *c = new calculator((char*)"2+2=");
+    c->printInfix();
+    cout<<c->calculateInfix()<<endl;
+    delete(c);
 }

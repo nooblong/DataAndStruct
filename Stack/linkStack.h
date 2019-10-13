@@ -5,6 +5,7 @@
 #ifndef DATAANDSTRUCT_LINKSTACK_H
 #define DATAANDSTRUCT_LINKSTACK_H
 
+#include <iostream>
 #include "Stack.h"
 #include "../Exception.h"
 
@@ -32,7 +33,8 @@ public:
     int size()const ;
     void push(const T &value);
     T pop();
-    T getTop()const ;
+    T getTop()const;
+    void traverse();
 };
 
 template<class T>
@@ -79,5 +81,15 @@ T linkStack<T>::getTop() const {
         throw outOfRange();
     return top->data;
 }
+
+template<class T>
+void linkStack<T>::traverse() {
+    Node *p = top->next;
+    while (p->next){
+        cout<<p->data<<" ";
+    }
+    cout<<endl;
+}
+
 
 #endif //DATAANDSTRUCT_LINKSTACK_H

@@ -19,4 +19,18 @@ public:
     }
 };
 
+class divideByZero:public _exception{
+public:
+    const char *waht() const throw(){
+        return "Error, Divide by zero";
+    }
+};
+
+class badExpression:public _exception{
+public:
+    const char *waht() const throw(){
+        return "Error, bad expression";
+    }
+};
+
 #endif
