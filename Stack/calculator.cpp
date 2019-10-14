@@ -23,6 +23,8 @@ calculator::~calculator() {
 }
 
 double calculator::spellNum(char *fix, int &i) {
+    //传进来了i的地址
+    //转换成double时，有几位数i就加几
     double num1 = 0, num2 = 0, num;
     int j = 0;
     while (fix[i] >= '0' && fix[i] <= '9')
@@ -164,38 +166,64 @@ double calculator::calculateInfix() {
 }
 
 double calculator::calculatePostfix() {
-    return 0;
+    int i = 0;
+    oper_and.clear();
+    while (postfix[i] != '\0'){
+        if ((infix[i] >= '0' && infix[i] <= '9') || infix[i] == '.'){
+            oper_and.push(spellNum(postfix,i));
+        } else if (postfix[i] == ' ')
+            i++;
+        else{
+            double a, b, num;
+            b = oper_and.pop();
+            a = oper_and.pop();
+            num = operate(a, infix[i], b);
+            oper_and.push(num);
+            i++;
+        }
+    }
+    double result = oper_and.pop();
+    if (!oper_and.empty())
+        throw badExpression();
+    return result;
 }
 
 void calculator::infixToPostfix() {
-    oper_and.clear();
-    oper_ator.clear();
-    int i = 0;
+    int i = 0, j = 0;
     double num;
     char item;
     oper_ator.push('=');
     while (!oper_ator.empty()) {
         if ((infix[i] >= '0' && infix[i] <= '9') || infix[i] == '.') {
 //            num = spellNum(infix,i);
-            postfix[i] = infix[i];
+            postfix[j] = infix[i];
+            j++;
             i++;
         } else {
+            postfix[j] = ' ';//空格用于区分后缀表达式中各组成部分
+            j++;
             item = oper_ator.getTop();
-            switch (precede(item, infix[i])) {
-                case 1:
-                    //栈外优先级比栈内高
-                    oper_ator.push(item);
+            switch (precede(item, infix[i])) {//infix级别高，入栈
                 case -1:
-                case 0:
-                    //栈内优先级更高
-                    char tmp;
-                    tmp = oper_ator.pop();
-                    postfix[i] = item;
+                    //栈外优先级比栈内低
+                    oper_ator.push(infix[i]);
                     i++;
-                    oper_ator.push(item);
+                    break;
+                case 1:
+                    //item级别高，出栈
+                    item = oper_ator.pop();
+                    postfix[j++] = item;
+                    break;
+                case 0:
+                    //删除括号或=
+                    item = oper_ator.pop();
+                    if (item != '=')
+                        i++;
+                    break;
             }
         }
     }
+    postfix[j] = '\0';
 }
 
 void calculator::printInfix() {

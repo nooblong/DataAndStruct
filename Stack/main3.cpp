@@ -134,8 +134,13 @@ int main() {
 //    calculator *c = new calculator((char*)"2+2=");
 //    c->printInfix();
 //    cout<<c->calculateInfix()<<endl;
-    calculator *d = new calculator((char*) "12+");
+    calculator *d = new calculator((char*) "1+1=");
     d->infixToPostfix();
     d->printPostfix();
+//    char *a = (char*)"1";
+//    int i = 0;
+//    cout<<d->spellNum(a,i)<<endl;
+//    cout<<i;
+    cout<<d->calculatePostfix();
     delete(d);
 }
