@@ -131,8 +131,11 @@ int main() {
 //    strcpy(b,a);
 //    cout<<b;
 //    calculator *c = new calculator((char*)"(2+2*2)*2=");
-    calculator *c = new calculator((char*)"2+2=");
-    c->printInfix();
-    cout<<c->calculateInfix()<<endl;
-    delete(c);
+//    calculator *c = new calculator((char*)"2+2=");
+//    c->printInfix();
+//    cout<<c->calculateInfix()<<endl;
+    calculator *d = new calculator((char*) "12+");
+    d->infixToPostfix();
+    d->printPostfix();
+    delete(d);
 }

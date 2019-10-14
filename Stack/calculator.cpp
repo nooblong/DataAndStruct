@@ -25,8 +25,10 @@ calculator::~calculator() {
 double calculator::spellNum(char *fix, int &i) {
     double num1 = 0, num2 = 0, num;
     int j = 0;
-    while (fix[i] >= '0' && fix[i] <= '9')//小数点以前
+    while (fix[i] >= '0' && fix[i] <= '9')
+        //小数点以前
         num1 = num1 * 10 + fix[i++] - '0';
+    //小数点后
     if (fix[i] == '.') {
         i++;
         while (fix[i] >= '0' && fix[i] <= '9')
@@ -166,7 +168,34 @@ double calculator::calculatePostfix() {
 }
 
 void calculator::infixToPostfix() {
-
+    oper_and.clear();
+    oper_ator.clear();
+    int i = 0;
+    double num;
+    char item;
+    oper_ator.push('=');
+    while (!oper_ator.empty()) {
+        if ((infix[i] >= '0' && infix[i] <= '9') || infix[i] == '.') {
+//            num = spellNum(infix,i);
+            postfix[i] = infix[i];
+            i++;
+        } else {
+            item = oper_ator.getTop();
+            switch (precede(item, infix[i])) {
+                case 1:
+                    //栈外优先级比栈内高
+                    oper_ator.push(item);
+                case -1:
+                case 0:
+                    //栈内优先级更高
+                    char tmp;
+                    tmp = oper_ator.pop();
+                    postfix[i] = item;
+                    i++;
+                    oper_ator.push(item);
+            }
+        }
+    }
 }
 
 void calculator::printInfix() {
@@ -178,5 +207,9 @@ void calculator::printInfix() {
 }
 
 void calculator::printPostfix() {
-
+    int i = 0;
+    while (postfix[i] != '\0') {
+        cout << postfix[i++];
+    }
+    cout << endl;
 }
