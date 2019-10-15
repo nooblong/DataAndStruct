@@ -14,11 +14,13 @@ class seqQueue : public Queue<T> {
 private:
     T *data;
     int front, rear;
+
     void resize();
 
 public:
-
+    void traverse();
     int maxSIze;
+
     seqQueue(int initSize = 100);
 
     ~seqQueue() { delete[] data; }
@@ -39,21 +41,6 @@ public:
 };
 
 template<class T>
-void seqQueue<T>::resize() {
-    std::cout << "resize()" << std::endl;
-    T *p = data;
-    data = new T[maxSIze * 2];
-    for (int i = 1; i < size(); ++i) {
-        //在数组中，front 可能不是在索引为0的位置，相对于i有一个偏移量
-        data[i] = p[(front + i) % maxSIze];
-        front = 0;
-        rear = size();
-        maxSIze = maxSIze * 2;
-        delete[]p;
-    }
-}
-
-template<class T>
 seqQueue<T>::seqQueue(int initSize) {
     try {
         if (initSize <= 0) throw badSize();
@@ -64,7 +51,22 @@ seqQueue<T>::seqQueue(int initSize) {
     }
     data = new T[initSize];
     maxSIze = initSize;
-    front = rear = -1;
+    front = rear = 0;
+}
+
+template<class T>
+void seqQueue<T>::resize() {
+    std::cout << "resize()" << std::endl;
+    T *p = data;
+    data = new T[maxSIze * 2];
+    for (int i = 1; i < size()+1; ++i) {
+        //在数组中，front 可能不是在索引为0的位置，相对于i有一个偏移量
+        data[i] = p[(front + i) % maxSIze];
+    }
+    front = 0;
+    rear = size();
+    maxSIze = maxSIze * 2;
+    delete[]p;
 }
 
 template<class T>
@@ -79,14 +81,14 @@ bool seqQueue<T>::full() const {
 
 template<class T>
 int seqQueue<T>::size() const {
-    return ((rear-front+maxSIze)%maxSIze);
+    return ((rear - front + maxSIze) % maxSIze);
 }
 
 template<class T>
 void seqQueue<T>::enQueue(const T &x) {
-    if ((rear + 1) % maxSIze == front) {
-        //队列为满{
-        cout<<"queue is full"<<endl;
+    if (full()) {
+        //队列为满
+        cout << "queue is full" << endl;
         resize();
     }
     rear = (rear + 1) % maxSIze;
@@ -104,6 +106,14 @@ template<class T>
 T seqQueue<T>::getHead() const {
     if (empty()) throw outOfRange();
     return data[(front + 1) % maxSIze];
+}
+
+template<class T>
+void seqQueue<T>::traverse() {
+    for (int j = 0; j < size(); ++j) {
+        cout<<data[j]<< " ";
+    }
+    cout<<endl;
 }
 
 #endif //DATAANDSTRUCT_SEQQUEUE_H
