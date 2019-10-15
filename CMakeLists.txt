@@ -9,6 +9,14 @@ add_executable(DataAndStruct
         Linear_List/SeqLIst.h
         Link_List/main2.cpp
         Link_List/linkList.h
-        Stack/main3.cpp
+        Stack/main4.cpp
         Stack/SeqStack.h
-        Stack/Stack.h Stack/dSeqStack.h Stack/linkStack.h Stack/calculator.cpp Stack/calculator.h)
+        Stack/Stack.h
+        Stack/dSeqStack.h
+        Stack/linkStack.h
+        Stack/calculator.cpp
+        Stack/calculator.h
+        Queue/Queue.h
+        Queue/seqQueue.h
+        DoubleLinkList/main3.cpp
+        Queue/main5.cpp)

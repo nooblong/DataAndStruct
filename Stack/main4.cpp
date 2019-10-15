@@ -121,7 +121,7 @@ void testLinkStack() {
     }
 }
 
-int main() {
+int main4() {
 //    convert(1000);
 //    match();
 //    const char* a;
@@ -138,4 +138,5 @@ int main() {
     d->infixToPostfix();
     d->printPostfix();
     delete(d);
+    return 0;
 }

@@ -10,5 +10,7 @@ int main2() {
     linkList.traverse();
     linkList.inverse();
     linkList.traverse();
+    cout<<"search 4"<<endl;
+    cout<<linkList.search(4)<<endl;
     return 0;
 }
