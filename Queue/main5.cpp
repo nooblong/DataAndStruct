@@ -7,17 +7,34 @@
 using namespace std;
 
 int main() {
-    seqQueue<int> seqQueue(11);
-    for (int i = 0; i < 10; ++i) {
-        seqQueue.enQueue(i);
-    }
-    for (int j = 0; j < 8; ++j) {
-        cout<<seqQueue.deQueue()<<" ";
-    }
+    seqQueue<int> seqQueue(5);
+    cout<<"add 0-19\n";
     for (int i = 0; i < 20; ++i) {
         seqQueue.enQueue(i);
     }
-    for (int j = 0; j < 20; ++j) {
+    cout<<"de 10\n";
+    for (int j = 0; j < 8; ++j) {
         cout<<seqQueue.deQueue()<<" ";
     }
+    cout<<"add 0-7\n";
+    for (int i = 0; i < 8; ++i) {
+        seqQueue.enQueue(i);
+    }
+    cout<<"de 10\n";
+    for (int j = 0; j < 10; ++j) {
+        cout<<seqQueue.deQueue()<<" ";
+    }
+    cout<<"de 20\n";
+    for (int k = 0; k < 10; ++k) {
+        cout<<seqQueue.deQueue()<<" ";
+    }
+    cout<<"add 0-99\n";
+    for (int i = 0; i < 100; ++i) {
+        seqQueue.enQueue(i);
+    }
+    cout<<"de 100\n";
+    for (int j = 0; j < 100; ++j) {
+        cout<<seqQueue.deQueue()<<" ";
+    }
+
 }

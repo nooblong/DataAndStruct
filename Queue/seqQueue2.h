@@ -53,11 +53,11 @@ void seqQueue<T>::resize() {
     std::cout << "resize()" << std::endl;
     T *p = data;
     data = new T[maxSIze * 2];
-    for (int i = 0; i < size(); ++i) {
+    for (int i = 0; i < maxSIze; ++i) {
         data[i] = p[(front + i) % maxSIze];
     }
     front = 0;
-    rear = size()+1;
+    rear = maxSIze-1;
     maxSIze = maxSIze * 2;
     delete[]p;
 
