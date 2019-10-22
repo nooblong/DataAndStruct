@@ -19,4 +19,4 @@ add_executable(DataAndStruct
         Queue/Queue.h
         Queue/seqQueue.h
         DoubleLinkList/main3.cpp
-        Queue/main5.cpp Queue/seqQueue1.h Queue/seqQueue2.h Queue/linkQueue.h)
+        Queue/main5.cpp Queue/seqQueue1.h Queue/seqQueue2.h Queue/linkQueue.h String/String.cpp String/String.h)
