@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main() {
+int main5() {
     seqQueue<int> seqQueue(5);
     cout<<"add 0-19\n";
     for (int i = 0; i < 20; ++i) {
