@@ -13,15 +13,91 @@ String::String(const char *str) {
 }
 
 int String::bfFind(const String &t, int pos) const {
-    return 0;
+    int i = 0;
+    int j = 0;
+    while (i < curLength && j < t.curLength) {
+        if (data[i] == t[j]) {
+            i++;
+            j++;
+        } else {
+            i = i - j + 1;
+            j = 0;
+        }
+    }
+    if (j >= t.curLength)
+        return i - t.curLength;
+    else
+        return -1;
 }
 
 int String::kmpFind(const String &t, int *next) {
-    return 0;
+    int i = 0;
+    int j = 0;
+    int nextI = 0;
+    while (i <= curLength){
+        if (t.data[j] == data[i]){
+            i++;
+            j++;
+        } else{
+            int pos = next[j];
+            j = pos;
+            if (data[i] == t.data[j]){
+                continue;
+            } else{
+                i++;
+            }
+        }
+        if (j == t.curLength){
+            return i-t.curLength;
+        }
+    }
+    return -1;
 }
 
 void String::getNextVal(const String &t, int pos) {
 
+}
+
+int *String::getTmp() {
+    int i = 1;
+    int j = 0;
+    int *tmp = new int[curLength];
+    tmp[0] = 0;
+    while (i <= curLength) {
+        if (data[j] != data[i]) {
+            if (i == curLength - 1) {
+                while (j >= 0) {
+                    if (j == 0) {
+                        tmp[i] = 0;
+                        return tmp;
+                    }
+                    j = tmp[j - 1];
+                    if (data[j] == data[i]) {
+                        tmp[i] = j + 1;
+                        return tmp;
+                    }
+                }
+            } else {
+                while (j >= 0){
+                    if (j == 0){
+                        tmp[i] = 0;
+                        break;
+                    }
+                    j = tmp[j-1];
+                    if (data[j] == data[i]){
+                        tmp[i] = j + 1;
+                        break;
+                    }
+                }
+                i++;
+            }
+        } else {
+            tmp[i] = j + 1;
+            i++;
+            j++;
+        }
+    }
+    return tmp;
 }
 
 String::String(const String &str) {
@@ -92,7 +168,9 @@ String &String::erase(int pos, int num) {
 }
 
 bool String::operator==(const String &str) {
-    return false;
+    if (curLength != str.curLength)
+        return false;
+    return strcmp(data, str.data) == 0;
 }
 
 String &String::operator+(const String &str) {
@@ -117,22 +195,24 @@ String &String::operator=(const String &str) {
 char &String::operator[](int n) const {
     if (n < 0 || n >= curLength)
         throw outOfRange();
+    else
+        return data[n];
 }
 
-istream &operator>>(istream &cin, String &str) {
+istream &operator>>(istream &istream1, String &str) {
     char *tmp = new char[10000];
-    cin >> tmp;
+    istream1 >> tmp;
     str.maxSize = 2 * strlen(tmp);
     str.data = new char[str.maxSize + 1];
     strcpy(str.data, tmp);
     str.curLength = strlen(tmp);
     delete[] tmp;
-    return cin;
+    return istream1;
 }
 
-ostream &operator<<(ostream &cout, String &str) {
-    cout << str.data;
-    return cout;
+ostream &operator<<(ostream &ostream1, String &str) {
+    ostream1 << str.data;
+    return ostream1;
 }
 
 void String::resize(int len) {

@@ -8,7 +8,9 @@
 
 #include <iostream>
 #include "../Exception.h"
+
 using namespace std;
+
 class String {
 public:
     String(const char *str = nullptr);
@@ -27,13 +29,13 @@ public:
 
     String subStr(int pos, int num) const;
 
-    int bfFind(const String &t, int pos = 0) const ;
+    int bfFind(const String &t, int pos = 0) const;
 
     String &insert(int pos, const String &s);
 
     String &erase(int pos, int num);
 
-    const char* toCharStr() const { return data;}
+    const char *toCharStr() const { return data; }
 
     int kmpFind(const String &t, int *next);
 
@@ -41,20 +43,23 @@ public:
 
     bool operator==(const String &str);
 
-    String&operator+(const String &str);
+    String &operator+(const String &str);
 
-    String&operator=(const String &str);
+    String &operator=(const String &str);
 
-    char &operator[](int n)const ;
+    char &operator[](int n) const;
 
-    friend istream&operator>>(istream &cin, String &str);
+    friend istream &operator>>(istream &cin, String &str);
 
-    friend ostream&operator<<(ostream &cout, String &str);
+    friend ostream &operator<<(ostream &cout, String &str);
 
+    int* getTmp();
 private:
     char *data;
     int maxSize;
+
     int curLength;
+
     void resize(int len);
 };
 

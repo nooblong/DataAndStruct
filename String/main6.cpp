@@ -7,7 +7,21 @@
 using namespace std;
 
 int main(){
-    String s("wdnmd");
-    cout<<s;
+    String s("abcdabca");
+    cout<<s<<endl;
+    int* tmp = nullptr;
+    tmp = s.getTmp();
+    for (int i = 0; i < s.size(); ++i) {
+        cout<<tmp[i]<<" ";
+    }
+    cout<<endl;
 
+    String s1("aabaabaaaqaqaababaaqaqbbb");
+    int *tmp1 = s1.getTmp();
+    for (int j = 0; j < s1.size(); ++j) {
+        cout<<tmp1[j]<<" ";
+    }
+    cout<<endl;
+
+    cout<<s1.kmpFind("qaqbbb", tmp1)<<endl;
 }
