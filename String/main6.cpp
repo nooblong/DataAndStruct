@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main6(){
     String s("abcdabca");
     cout<<s<<endl;
     int* tmp = nullptr;
