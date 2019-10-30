@@ -7,6 +7,7 @@
 
 #include "binaryTree.h"
 #include <iostream>
+#include <stack>
 using namespace std;
 
 template<class T>
@@ -144,7 +145,19 @@ void BinaryLinkList<T>::levelOrderTraverse() {
 
 template<class T>
 void BinaryLinkList<T>::preOrderWithStack() const {
-
+    stack<Node*> s;
+    Node *p = root;
+    while (!s.empty() || p){
+        if (p){
+            cout<<p->data<<" ";
+            s.push(p);
+            p = p->left;
+        } else {
+            p = s.top();
+            s.pop();
+            p = p->right;
+        }
+    }
 }
 
 template<class T>
