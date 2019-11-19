@@ -24,4 +24,5 @@ int main6(){
     cout<<endl;
 
     cout<<s1.kmpFind("qaqbbb", tmp1)<<endl;
+    return 0;
 }

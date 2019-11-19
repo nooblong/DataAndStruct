@@ -6,16 +6,26 @@
 #define DATAANDSTRUCT_ADJMATRIX_H
 
 #include "graph.h"
-template <class VertexType, class EdgeType>
-class adjMatrix : public graph<VertexType,EdgeType>{
+
+template<class VertexType, class EdgeType>
+class adjMatrix : public graph<VertexType, EdgeType> {
 private:
     VertexType *vertexs;//顶点向量
     EdgeType **edges;//邻接矩阵
     EdgeType noEdge;//无边标志
-    void dfs(int start)const ;//从start顶点出发深度优先遍历图
+    void dfs(int start) const {
+
+    }
+//从start顶点出发深度优先遍历图
 public:
-    adjMatrix(int size, EdgeType noEdgeFlag);
-    ~adjMatrix();
+    adjMatrix(int size, EdgeType noEdgeFlag) {
+
+    }
+
+    ~adjMatrix() {
+
+    }
+
     void createGraph(const VertexType V[], const EdgeType E[]);
 
     void dfsTraverse() const override;
