@@ -15,9 +15,10 @@ protected:
         bool operator<(const mstEdge &e) const {
             return weight < e.weight;
         }
-    } *TE;
-    int verNum, edgeNum;//顶点数，边数
+    };
+    mstEdge *TE = new mstEdge;
     bool *visited;
+    int verNum, edgeNum;//顶点数，边数
 public:
     int numOfVertex() const { return verNum;}
     int numOfEdge() const { return edgeNum;}

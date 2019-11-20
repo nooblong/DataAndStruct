@@ -19,14 +19,35 @@ private:
 //从start顶点出发深度优先遍历图
 public:
     adjMatrix(int size, EdgeType noEdgeFlag) {
-
+        this->verNum = size;
+        this->edgeNum = 0;
+        this->noEdge = noEdgeFlag;
+        vertexs = new VertexType[this->verNum];
+        for (int i = 0; i < this->verNum; ++i) {
+            edges[i] = new EdgeType[this->verNum];
+            for (int j = 0; j < this->verNum; ++j) {
+                edges[i][j] = noEdge;
+            }
+        }
+        this->visited = new bool[this->verNum];
+        this->TE = this->mstEdge[this->verNum-1];
     }
 
     ~adjMatrix() {
-
+        delete [] vertexs;
+        for (int i = 0; i < this->verNum; ++i) {
+            delete [] edges[i];
+        }
+        delete edges;
+        delete this->visited;
+        delete this->TE;
     }
 
     void createGraph(const VertexType V[], const EdgeType E[]);
+
+    void printGraph() const override;
+
+    void searchEdge(int from, int to) const override;
 
     void dfsTraverse() const override;
 
@@ -40,13 +61,9 @@ public:
 
     void printMst() const override;
 
-    void searchEdge(int from, int to) const override;
-
     bool insertEdge(int from, int to, EdgeType w) override;
 
     bool removeEdge(int from, int to) override;
-
-    void printGraph() const override;
 };
 
 template<class VertexType, class EdgeType>
