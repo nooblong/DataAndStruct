@@ -16,7 +16,7 @@ protected:
             return weight < e.weight;
         }
     };
-    mstEdge *TE = new mstEdge;
+    mstEdge *TE = new mstEdge();
     bool *visited;
     int verNum, edgeNum;//顶点数，边数
 public:
@@ -29,7 +29,7 @@ public:
     virtual void prim(EdgeType noEdge)const = 0;//prim算法
     virtual void kruskal()const = 0;//Kruskal算法
     virtual void printMst()const = 0;//输出最小生成树
-    virtual void searchEdge(int from, int to)const = 0;//查找边
+    virtual bool searchEdge(int from, int to)const = 0;//查找边
     virtual bool insertEdge(int from, int to, EdgeType w) = 0;//插入权值为w的边
     virtual bool removeEdge(int from, int to) = 0;//删除边
     virtual void printGraph()const = 0;//输出图
