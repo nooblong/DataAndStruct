@@ -19,4 +19,4 @@ add_executable(DataAndStruct
         Queue/Queue.h
         Queue/seqQueue.h
         DoubleLinkList/main3.cpp
-        Queue/main5.cpp Queue/seqQueue1.h Queue/seqQueue2.h Queue/linkQueue.h String/String.cpp String/String.h String/main6.cpp Tree/main7.cpp Tree/binaryTree.h Tree/BinaryLinkList.h Graph/graph.h Graph/adjMatrix.h Graph/main8.cpp)
+        Queue/main5.cpp Queue/seqQueue1.h Queue/seqQueue2.h Queue/linkQueue.h String/String.cpp String/String.h String/main6.cpp Tree/main7.cpp Tree/binaryTree.h Tree/BinaryLinkList.h Graph/graph.h Graph/adjMatrix.h Graph/main8.cpp Graph/adjList.h)
