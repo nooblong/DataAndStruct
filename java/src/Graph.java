@@ -1,7 +1,7 @@
 public abstract class Graph<VertexType,EdgeType> {
 
     protected int verNum, edgeNum;
-    boolean visited[];
+    Boolean visited[];
     protected MstEdge[] TE;
 
     protected class MstEdge {
