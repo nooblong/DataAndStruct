@@ -22,7 +22,7 @@ public abstract class Graph<VertexType,EdgeType> {
         return edgeNum;
     }
 
-    abstract void createGraph(final VertexType[] V, final EdgeType[] E);
+    abstract void createGraph(final VertexType[] V, final EdgeType[] E, int num);
     abstract void dfsTraverse();
     abstract void bfsTraverse();
     abstract boolean topSort();

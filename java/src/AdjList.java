@@ -12,9 +12,17 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
                 1, 0, 0, 0, 1,
                 1, 0, 0, 1, 1,
                 0, 0, 1, 0, 1,
-                0, 1, 1, 1, 0});
+                0, 1, 1, 1, 0}, 5);
         adjList.printGraph();
-
+        System.out.println("----adjList2----");
+        AdjList<String, Integer> adjList2 = new AdjList<>(4, String.class, Integer.class);
+        adjList2.createGraph(new String[]{"v1","v2","v3","v4"}, new Integer[]{
+                0,0,2,1,
+                6,0,0,0,
+                0,0,0,4,
+                0,5,0,0
+        }, 4);
+        adjList2.printGraph();
     }
 
     public void test(AdjList adjList) {
@@ -69,13 +77,14 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
     }
 
     @Override
-    void createGraph(Vertex[] V, Edge[] E) {
+    void createGraph(Vertex[] V, Edge[] E, int num) {
         int i, j;
         for (i = 0; i < verNum; i++) {
             verList[i].vertex = V[i];
         }
         for (i = 0; i < verNum; i++) {
-            int startNum = i*5;
+//            int startNum = (int)(i*Math.sqrt(verNum));
+            int startNum = i*num;
             for (int k = 0; k < verNum; k++) {
                 if (!E[k + startNum].equals(0)){
                     //如果不是0
@@ -208,7 +217,7 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
 
     private void printList(EdgeNode p){
         while (p != null) {
-            System.out.print(verList[p.to].vertex + " ");
+            System.out.print(verList[p.to].vertex + "(" + p.weight + ")" + " ");
             p = p.next;
         }
     }
