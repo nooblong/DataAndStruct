@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
+public class AdjList<Vertex, Edge extends Comparable> extends Graph<Vertex, Edge> {
 
     public static void main(String[] args) {
         AdjList<String, Integer> adjList = new AdjList<>(5, String.class, Integer.class);
@@ -16,14 +16,14 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
         System.out.println("----adjList2----");
         AdjList<String, Integer> adjList2 = new AdjList<>(4, String.class, Integer.class);
         adjList2.createGraph(new String[]{"v1","v2","v3","v4"}, new Integer[]{
-//                0,0,2,1,
-//                6,0,0,0,
-//                0,0,0,4,
-//                0,5,0,0
                 0,0,2,1,
-                0,0,0,0,
+                6,0,0,0,
                 0,0,0,4,
-                0,0,0,0
+                0,5,0,0
+//                0,0,2,1,
+//                0,0,0,0,
+//                0,0,0,4,
+//                0,0,0,0
         }, 4);
         adjList2.insertEdge(0, 2, 2);
         adjList2.printGraph();
@@ -52,9 +52,16 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
         adjList3.printGraph();
         adjList3.dfsTraverse();
         adjList3.bfsTraverse();
+        adjList3.prim(0);
     }
 
     public void test(AdjList adjList) {
+
+    }
+
+    public void myPrim(int vertex){
+        Set<Integer> selectVer = new TreeSet<>();
+        Set<Integer> unselectVer = new TreeSet<>();
 
     }
 
@@ -105,7 +112,10 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
         edgeNum = 0;
         verList = (VerNode[]) Array.newInstance(VerNode.class, size);
         visited = new Boolean[verNum];
-        TE = (MstEdge[]) Array.newInstance(MstEdge.class, verNum - 1);
+        TE = ( MstEdge[]) Array.newInstance(MstEdge.class, verNum);
+        for (int i = 0; i < TE.length; i++) {
+            TE[i] = new MstEdge();
+        }
         topOrder = new int[verNum];
 
         for (int i = 0; i < verList.length; i++) {
@@ -192,12 +202,54 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
     }
 
     @Override
-    void prim() {
-
+    void prim(Edge noEdge) {
+        System.out.println("Prim");
+        class Dist{
+            int adjVex;//最小代价边依附的顶点编号
+            Edge lowCost;//最小代价
+        }
+        Dist[] D = (Dist[])Array.newInstance(Dist.class, verNum);
+        for (int i = 0; i < D.length; i++) {
+            D[i] = new Dist();
+        }
+        EdgeNode p;
+        Edge minCost;
+        int u = 0, i = 0, j = 0, count = 0;
+        for (i = 0; i < verNum; i++) {
+            visited[i] = false;
+            D[i].lowCost = noEdge;
+        }
+        visited[u] = true;
+        for (i = 0; i < verNum; i++) {
+            //选中一个点u加入到D中
+            for (p = verList[u].firstEdge; p != null; p = p.next) {
+                //更新u关联的顶点的D值
+                if (!visited[p.to] && D[p.to].lowCost.compareTo(p.weight) > 0) {
+                    D[p.to].lowCost = p.weight;
+                    D[p.to].adjVex = u;
+                }
+            }
+                minCost = noEdge;
+                for (j = 0; j < verNum; j++) {
+                    //在V-U中查找lowCost最小顶点u
+                    if (D[j].lowCost.compareTo(minCost) < 0) {
+                        minCost = D[j].lowCost;
+                        u = j;
+                    }
+                }
+                    TE[count].vex1 = D[u].adjVex;//保存最小生成树的一条边
+                    TE[count].vex2 = u;
+                    TE[count++].weight = D[u].lowCost;
+                    D[u].lowCost = noEdge;//顶点u已并入D中
+                    visited[u] = true;
+        }
     }
 
     @Override
     void kruskal() {
+        int count = 0;
+        MstEdge e;
+        EdgeNode p;
 
     }
 

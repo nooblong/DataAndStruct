@@ -1,4 +1,4 @@
-public abstract class Graph<VertexType,EdgeType> {
+public abstract class Graph<VertexType,EdgeType extends Comparable> {
 
     protected int verNum, edgeNum;
     Boolean visited[];
@@ -27,7 +27,7 @@ public abstract class Graph<VertexType,EdgeType> {
     abstract void dfsTraverse();
     abstract void bfsTraverse();
     abstract boolean topSort();
-    abstract void prim();
+    abstract void prim(EdgeType noEdge);
     abstract void kruskal();
     abstract void printMst();
     abstract boolean searchEdge(int from, int to);
