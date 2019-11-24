@@ -10,6 +10,7 @@ public abstract class Graph<VertexType,EdgeType> {
 
         @Override
         public boolean equals(Object obj) {
+            System.out.println("equals");
             return weight.equals(((MstEdge)obj).weight);
         }
     }

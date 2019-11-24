@@ -1,7 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
 
@@ -14,15 +12,46 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
                 0, 0, 1, 0, 1,
                 0, 1, 1, 1, 0}, 5);
         adjList.printGraph();
+        adjList.dfsTraverse();
         System.out.println("----adjList2----");
         AdjList<String, Integer> adjList2 = new AdjList<>(4, String.class, Integer.class);
         adjList2.createGraph(new String[]{"v1","v2","v3","v4"}, new Integer[]{
+//                0,0,2,1,
+//                6,0,0,0,
+//                0,0,0,4,
+//                0,5,0,0
                 0,0,2,1,
-                6,0,0,0,
+                0,0,0,0,
                 0,0,0,4,
-                0,5,0,0
+                0,0,0,0
         }, 4);
+        adjList2.insertEdge(0, 2, 2);
         adjList2.printGraph();
+        adjList2.dfsTraverse();
+        System.out.println("----adjList3----");
+        AdjList<String,Integer> adjList3 = new AdjList<>(7, String.class, Integer.class);
+        adjList3.createGraph(new String[]{"A","B","C","D","E","F","G"});
+        adjList3.insertEdge(0, 1, 1);
+        adjList3.insertEdge(0, 2, 1);
+        adjList3.insertEdge(1, 0, 1);
+        adjList3.insertEdge(1, 3, 1);
+        adjList3.insertEdge(1, 4, 1);
+        adjList3.insertEdge(2, 0, 1);
+        adjList3.insertEdge(2, 4, 1);
+        adjList3.insertEdge(2, 5, 1);
+        adjList3.insertEdge(3, 1, 1);
+        adjList3.insertEdge(3, 6, 1);
+        adjList3.insertEdge(4, 1, 1);
+        adjList3.insertEdge(4, 2, 1);
+        adjList3.insertEdge(4, 6, 1);
+        adjList3.insertEdge(5, 2, 1);
+        adjList3.insertEdge(5, 6, 1);
+        adjList3.insertEdge(6, 3, 1);
+        adjList3.insertEdge(6, 4, 1);
+        adjList3.insertEdge(6, 5, 1);
+        adjList3.printGraph();
+        adjList3.dfsTraverse();
+        adjList3.bfsTraverse();
     }
 
     public void test(AdjList adjList) {
@@ -60,6 +89,15 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
 
     void dfs(int start) {
         //从start开始深度优先遍历图
+        EdgeNode p = verList[start].firstEdge;
+        System.out.println(">" + verList[start].firstEdge + "---" + verList[start].vertex);
+         visited[start] = true;
+         while (p != null){
+             if (visited[p.to] == false){
+                 dfs(p.to);
+             }
+             p = p.next;
+         }
     }
 
     AdjList(int size, Class<Vertex> vertexType, Class<Edge> edgeType) {
@@ -94,14 +132,58 @@ public class AdjList<Vertex, Edge> extends Graph<Vertex, Edge> {
         }
     }
 
+    void createGraph(Vertex[] V){
+        for (int i = 0; i < verNum; i++) {
+            verList[i].vertex = V[i];
+        }
+    }
+
     @Override
     void dfsTraverse() {
-
+        int count = 0;
+        for (int i = 0; i < verNum; i++) {
+            visited[i] = false;
+        }
+        for (int i = 0; i < verNum; i++) {
+            if (!visited[i]){
+                dfs(i);
+                count++;
+            }
+        }
+        System.out.println("count: " + count);
     }
 
     @Override
     void bfsTraverse() {
-
+        int count = 0;
+        Queue<Integer> queue = new LinkedList<>();
+        EdgeNode p;
+        for (int j = 0; j < verNum; j++) {
+            visited[j] = false;
+        }
+        for (int i = 0; i < verNum; i++) {
+            if (visited[i] == true)
+                continue;
+            System.out.println(verList[i].vertex + " ");
+            visited[i] = true;
+            queue.offer(i);
+            count++;
+            while (!queue.isEmpty()){
+                int v = queue.peek();
+                queue.remove();
+                p = verList[v].firstEdge;
+                while (p != null){
+                    //查找顶点v未被访问的邻接点
+                    if ( visited[p.to] == false){
+                        System.out.println(verList[p.to].vertex + " ");
+                        visited[p.to] = true;
+                        queue.offer(p.to);
+                    }
+                    p = p.next;
+                }
+            }
+        }
+        System.out.println("count: " + count);
     }
 
     @Override
