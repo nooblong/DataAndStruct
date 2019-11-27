@@ -21,7 +21,7 @@ public abstract class AbstractHuffmanTree<T> {
     Node[] hfTree;//保存哈夫曼树
     HuffmanCode[] hfCode;//保存哈夫曼编码
     int size;
-    abstract void selectMin(int m, int p);
+    abstract int selectMin(int m, int p);
 
     public AbstractHuffmanTree(){
 
