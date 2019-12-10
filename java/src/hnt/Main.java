@@ -1,5 +1,5 @@
 package hnt;
 
-public class Main {
+public class Main{
 
 }
