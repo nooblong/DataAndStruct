@@ -36,5 +36,5 @@ int main5() {
     for (int j = 0; j < 100; ++j) {
         cout<<seqQueue.deQueue()<<" ";
     }
-
+    return 0;
 }
