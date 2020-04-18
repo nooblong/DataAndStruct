@@ -35,7 +35,7 @@ int *merge(int *data, int length) {
     return newData;
 }
 
-int mainH2() {
+int main() {
     int times = 0;
     cin >> times;//输入次数
     int *data = new int[times]();
