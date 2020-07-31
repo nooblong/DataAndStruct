@@ -34,4 +34,5 @@ add_executable(DataAndStruct
         Graph/main8.cpp
         Graph/adjList.h
         Homework/no2.cpp
-        Homework/main.cpp Homework/no3.cpp)
+        Homework/main.cpp Homework/no3.cpp
+        help/123.cpp)

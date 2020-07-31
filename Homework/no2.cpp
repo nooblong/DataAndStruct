@@ -9,7 +9,7 @@ int delete2(int data[], int curLength) {
         data[i] = 0;
         num++;
     }
-    return num;//删除了多少个数
+    return num;//多少个数变成了0
 }
 
 int delete3(int data[], int curLength) {
@@ -19,7 +19,7 @@ int delete3(int data[], int curLength) {
         data[i] = 0;
         num++;
     }
-    return num;//删除了多少个数
+    return num;//多少个数变成了0
 }
 
 int *merge(int *data, int length) {
@@ -44,10 +44,10 @@ int main() {
     }
 
     for (int a = 0; a < times; ++a) {
-        //为每次单独计算剩下的人数
+        //为每次的人数单独计算，剩下的人数
         int preLength = data[a];//删掉0前的长度
-        int noZeroLength = data[a];//不算0时的长度
-        int *cal = new int[noZeroLength]();
+        int noZeroLength = data[a];//不算0的长度
+        int *cal = new int[noZeroLength]();//定义数组
         for (int i = 0; i < data[a]; ++i) {
             //初始化数组为1到n
             cal[i] = i + 1;
@@ -78,8 +78,6 @@ int main() {
         }
         cout << endl;
     }
-
-
     return 0;
 }
 
